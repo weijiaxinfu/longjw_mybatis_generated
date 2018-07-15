@@ -3,6 +3,9 @@ package com.xixi.longjw;
 
 import com.xixi.longjw.dao.PersonMapper;
 import com.xixi.longjw.model.Person;
+
+
+import net.sf.json.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +29,8 @@ public class LongjwApplicationTests {
         person.setBirthday(new Date());
         System.out.println(person.toString());
         int result = person_Dao.insertPerson(person);
-        System.out.println(result);
+        JSONObject map = JSONObject.fromObject(person);
+        System.out.println(map);
     }
 
     @Test
