@@ -24,6 +24,7 @@ public class LongjwApplicationTests {
         person.setAge(26);
         person.setUserName("龙静文hahaha");
         person.setBirthday(new Date());
+        System.out.println(person.toString());
         int result = person_Dao.insertPerson(person);
         System.out.println(result);
     }
@@ -31,7 +32,7 @@ public class LongjwApplicationTests {
     @Test
     public void testSelectTest() {
         Person result = person_Dao.selectByPrimaryKey(1);
-        System.out.println(result.getUserName());
+        System.out.println(result.getUserName()+""+new Date());
     }
 
 }
